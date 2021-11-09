@@ -1,0 +1,80 @@
+/*# Copyright (c) 2021 FnLink (hunan) Technologies CO., LIMITED.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+*/
+
+#include "../../hcs/fgv200zrxx.hcs"
+
+root {
+    platform {
+        gpio_config {
+            match_attr = "gpio_config";
+            pin = [0, 1];
+            // touch_ztw523: TSP_RST - GPIO12, TSP_INT-GPIO27
+            // touch_fts: TSP_RST - GPIO05, TSP_INT-GPIO27
+            realPin = [5, 27];
+            config = [5, 2];
+            pinNum = 2;
+        }
+        i2c_config {
+            i2c0 {
+                match_attr = "i2c0_config";
+                port = 0;
+                speed = 200000;
+                // TSP_SCL/SDA - I2C0 = GPIO04/GPIO05
+                scl_pin = 4;
+                sda_pin = 5;
+                use_dma = 0;
+                use_sync = 1;
+                as_master = 1;
+                address_width = 8;
+                mode = 0;
+            }
+            i2c1 {
+                match_attr = "i2c1_config";
+                port = 1;
+                speed = 200000;
+                // TSP_SCL/SDA - I2C1 = GPIO06/GPIO07
+                scl_pin = 6;
+                sda_pin = 7;
+                use_dma = 0;
+                use_sync = 1;
+                as_master = 1;
+                address_width = 8;
+                mode = 0;
+            }
+        }
+    }
+    misc {
+        fs_config {
+            littlefs_config {
+                match_attr = "littlefs_config";
+                mount_points = ["/data"];
+                partitions = [10];
+                block_size = [4096];
+                block_count = [1024];
+            }
+        }
+        storage_config {
+            flash_config {
+                match_attr = "flash_config";
+                partitions = [10];
+                owner = [0];
+                description = ["littlefs"];
+                start_addr = [0xB60000];
+                length = [0x400000];
+                options = [3];
+            }
+        }
+    }
+}
+

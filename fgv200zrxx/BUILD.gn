@@ -11,11 +11,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import("//drivers/adapter/khdf/liteos/hdf.gni")
-
-module_switch = defined(LOSCFG_DRIVERS_HDF)
-module_name = "hdf_config"
-hdf_driver(module_name) {
-  hcs_sources = [ "../hcs/fgv200zrxx.hcs" ]
+if (ohos_kernel_type == "liteos_m") {
+  import("//kernel/liteos_m/liteos.gni")
+  module_name = get_path_info(rebase_path("."), "name")
+  module_group(module_name) {
+    modules = [ "liteos_m" ]
+  }
 }
-

@@ -11,23 +11,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import("//build/lite/config/component/lite_component.gni")
-import("drivers.gni")
-
-config("drivers_config") {
-  include_dirs = hdf_include_dirs
-  include_dirs += []
-}
-
-group("fnlink_adapter") {
-  public_configs = [ ":drivers_config" ]
-  public_deps = []
-
-  if (CONFIG_BOARD_DISPLAY) {
-    public_deps += [ "" ]
-  }
-
-  if (CONFIG_BOARD_TOUCH) {
-    public_deps += [ "" ]
+if (ohos_kernel_type == "liteos_m") {
+  import("//kernel/liteos_m/liteos.gni")
+  module_name = get_path_info(rebase_path("."), "name")
+  kernel_module(module_name) {
   }
 }

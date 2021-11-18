@@ -11,10 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CONFIG_SHIELD_FGV200ZRXX_T1=y
-CONFIG_BOARD_DISPLAY=y
-CONFIG_DISPLAY_A064=y
-CONFIG_BOARD_TOUCH=y
-CONFIG_TOUCH_FTS=y
-
-
+config SHIELD_FGV200ZRXX_T0
+    bool
+    default n
+    # def_bool $(shields_list_contains,fgv200zrxx-t0)

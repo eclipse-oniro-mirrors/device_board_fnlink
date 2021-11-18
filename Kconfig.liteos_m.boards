@@ -11,9 +11,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if BOARD_FGV200ZRXX
-config BOARD
-    string
-    default "FGV200ZRXX"
+orsource "*/Kconfig.liteos_m.board"
 
-endif # BOARD_FGV200ZRXX

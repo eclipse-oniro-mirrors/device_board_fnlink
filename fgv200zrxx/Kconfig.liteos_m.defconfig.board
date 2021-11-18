@@ -11,28 +11,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-config BOARD_DISPLAY
-    bool "display"
+if BOARD_FGV200ZRXX
+config BOARD
+    string
+    default "fgv200zrxx"
 
-config DISPLAY_A064
-    bool "a064"
-    depends on BOARD_DISPLAY
-
-config DISPLAY_ICNA3311
-    bool "icna3311"
-    depends on BOARD_DISPLAY
-
-config DISPLAY_RM69330
-    bool "rm69330"
-    depends on BOARD_DISPLAY
-
-config BOARD_TOUCH
-    bool "touch"
-
-config TOUCH_FTS
-    bool "fts"
-    depends on BOARD_TOUCH
-
-config TOUCH_ZTW523
-    bool "ztw523"
-    depends on BOARD_TOUCH
+endif # BOARD_FGV200ZRXX

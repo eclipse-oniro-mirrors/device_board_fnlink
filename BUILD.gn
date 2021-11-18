@@ -11,6 +11,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOSCFG_BOARD_FGV200ZRXX=y
-LOSCFG_SOC_SERIES_BES2600=y
-LOSCFG_SOC_BES2600W=y
+if (ohos_kernel_type == "liteos_m") {
+  import("//kernel/liteos_m/liteos.gni")
+  module_name = get_path_info(rebase_path("."), "name")
+  module_group(module_name) {
+    modules = [
+      "fgv200zrxx",
+      "drivers",
+      "hcs",
+    ]
+  }
+}

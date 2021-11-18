@@ -11,18 +11,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#import("../components.gni")
-
-hdf_include_dirs = [
-    "//drivers/adapter/khdf/liteos_m/osal/include/",
-    "//drivers/framework/include",
-    "//drivers/framework/include/config",
-    "//drivers/framework/include/core",
-    "//drivers/framework/include/platform",
-    "//drivers/framework/include/utils",
-    "//drivers/framework/core/host/include",
-    "//drivers/framework/core/shared/include",
-    "//drivers/framework/utils/include",
-    "//kernel/liteos_m/kernel/arch/include",
-    "//base/hiviewdfx/hilog_lite/interfaces/native/kits",
-]
+orsource "*/Kconfig.liteos_m.defconfig.board"

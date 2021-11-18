@@ -11,6 +11,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-config SHIELD_FGV200ZRXX_T1
-    bool "FGV200ZRXX_T1"
-    depends on BOARD_FGV200ZRXX
+if SHIELD_FGV200ZRXX_T1
+config SPI
+    bool
+    default y
+endif # SHIELD_FGV200ZRXX_T1

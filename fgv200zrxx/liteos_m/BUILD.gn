@@ -11,7 +11,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-config BOARD_FGV200ZRXX
-    bool "FGV200ZRXX"
-    depends on SOC_BES2600W
+import("//kernel/liteos_m/liteos.gni")
 
+module_name = get_path_info(rebase_path("."), "name")
+kernel_module(module_name) {
+  deps = [ "$product_path/hdf_config:hdf_hcs" ]
+}

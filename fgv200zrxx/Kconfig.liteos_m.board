@@ -11,6 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOSCFG_BOARD_FGV200ZRXX=y
-LOSCFG_SOC_SERIES_BES2600=y
-LOSCFG_SOC_BES2600W=y
+config BOARD_FGV200ZRXX
+    bool "select board FGV200ZRXX"
+    depends on SOC_BES2600W
+

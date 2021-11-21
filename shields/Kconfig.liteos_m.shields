@@ -11,9 +11,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if SHIELD_FGV200ZRXX_T0
-config SHIELD
-    string
-    default "FGV200ZRXX_T0"
-
-endif # SHIELD_FGV200ZRXX_T0
+orsource "*/Kconfig.liteos_m.defconfig.shield"
+orsource "*/Kconfig.liteos_m.shield"

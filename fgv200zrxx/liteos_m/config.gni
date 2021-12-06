@@ -67,6 +67,7 @@ board_cflags = [
   "-DCONFIG_DISPLAY_A064",
   "-DLFS_MAX_OPEN_DIRS=32",
   "-DMBEDTLS_CMSIS_FILE=\"rtos/liteos/liteos_m/kal/cmsis/cmsis_os.h\"",
+  "-DLOSCFG_BASE_CORE_HILOG",
 ]
 
 board_cxx_flags = board_cflags

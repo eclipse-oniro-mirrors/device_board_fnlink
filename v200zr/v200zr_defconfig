@@ -11,7 +11,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-config SHIELD_FGV200ZRXX_T1
-    bool
-    default n
-    # def_bool $(shields_list_contains,fgv200zrxx-t1)
+LOSCFG_BOARD_V200ZR=y
+LOSCFG_SOC_SERIES_BES2600=y
+LOSCFG_SOC_BES2600W=y

@@ -11,9 +11,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import("//kernel/liteos_m/liteos.gni")
+if BOARD_V200ZR
+config FLASH_SIZE
+    int 
+    default 16
+    help 
+        support flash size
+endif #BOARD_V200ZR
 
-module_name = get_path_info(rebase_path("."), "name")
-kernel_module(module_name) {
-  deps = [ "$product_path/hdf_config:hdf_hcs" ]
-}

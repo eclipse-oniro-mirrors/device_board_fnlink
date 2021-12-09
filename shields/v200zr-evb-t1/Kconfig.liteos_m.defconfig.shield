@@ -11,5 +11,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-orsource "*/Kconfig.liteos_m.board"
-
+if SHIELD_FGV200ZRXX_T1
+config DISPLAY_PANEL
+    string  
+    default "a064"
+    help 
+        support display panel: a064, zzw395,icna3311 rm69330
+endif # SHIELD_FGV200ZRXX_T1

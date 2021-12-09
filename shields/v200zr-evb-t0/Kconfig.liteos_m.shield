@@ -11,7 +11,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-config SHIELD_FGV200ZRXX_T0
-    bool
-    default n
-    # def_bool $(shields_list_contains,fgv200zrxx-t0)
+config SHIELD_V200ZR_EVB_T0
+    bool "V200Z-R-EVB-T0"
+    depends on BOARD_V200ZR
+    select DRIVERS_HDF_PLATFORM_GPIO
+    select FS_LITTLEFS
+    # def_bool $(shields_list_contains,fgv200zr-l0)
+

@@ -11,8 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if SHIELD_FGV200ZRXX_T0
-config SPI
-    bool
-    default y
-endif # SHIELD_FGV200ZRXX_T0
+config BOARD_V200ZR
+    bool "select board V200Z-R"
+    depends on SOC_BES2600W
+

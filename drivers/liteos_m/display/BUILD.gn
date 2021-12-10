@@ -11,8 +11,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if SHIELD_FGV200ZRXX_T1
-config SPI
-    bool
-    default y
-endif # SHIELD_FGV200ZRXX_T1
+import("//drivers/adapter/khdf/liteos_m/hdf.gni")
+import("//build/lite/config/component/lite_component.gni")
+
+module_name = get_path_info(rebase_path("."), "name")
+hdf_driver(module_name) {
+  sources = [
+    "zzw395.c",
+  ]
+  include_dirs = [
+    "//drivers/peripheral/display/interfaces/include",
+    "//drivers/peripheral/display/hal",
+    "//drivers/peripheral/base",
+    "//drivers/framework/support/platform/include/mipi",
+    "//device/soc/$LOSCFG_SOC_COMPANY/bes2600/liteos_m/components/drivers/display/hal"
+  ]
+}
+

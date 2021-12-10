@@ -11,5 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-orsource "*/Kconfig.liteos_m.board"
 
+if SHIELD_V200ZR_EVB_T0
+
+endif # SHIELD_FGV200ZR_L1

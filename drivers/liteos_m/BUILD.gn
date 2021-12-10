@@ -11,9 +11,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if BOARD_FGV200ZRXX
-config BOARD
-    string
-    default "fgv200zrxx"
-
-endif # BOARD_FGV200ZRXX
+if (ohos_kernel_type == "liteos_m") {
+  import("//kernel/liteos_m/liteos.gni")
+  module_name = get_path_info(rebase_path("."), "name")
+  module_group(module_name) {
+    modules = [
+      "display",
+      "touch",
+    ]
+  }
+}

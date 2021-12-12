@@ -72,16 +72,6 @@ board_cflags = [
 
 board_cxx_flags = board_cflags
 board_ld_flags = [
-#"-mcpu=cortex-m33",
-# "-mfpu=fpv5-sp-d16",
-#  "-mfloat-abi=hard",
-#  "-fdata-sections",
-#  "-mthumb",
-#  "-mthumb-interwork",
-#  "-lkernel",
-#  "-lc",
-#  "-lm",
-#  "-lstdc++",
   "-L${ohos_root_path}out/${board_name}/${product_name}/libs",
 ]
 
@@ -107,39 +97,6 @@ if (wrap_fs_api == "true") {
      "-Wl,--wrap=vsnprintf",
      "-Wl,--wrap=vprintf",
      ]
-#     "-Wl,--wrap=umount2",
-#     "-Wl,--wrap=open",
-#     "-Wl,--wrap=close",
-#     "-Wl,--wrap=read",
-#     "-Wl,--wrap=write",
-#     "-Wl,--wrap=lseek",
-#     "-Wl,--wrap=unlink",
-#     "-Wl,--wrap=fstat",
-#     "-Wl,--wrap=stat",
-#     "-Wl,--wrap=fsync",
-#     "-Wl,--wrap=mkdir",
-#     "-Wl,--wrap=opendir",
-#     "-Wl,--wrap=readdir",
-#     "-Wl,--wrap=closedir",
-#     "-Wl,--wrap=rmdir",
-#     "-Wl,--wrap=rename",
-#     "-Wl,--wrap=statfs",
-#     "-Wl,--wrap=ftruncate",
-# 
-#     "-Wl,--wrap=fopen",
-#     "-Wl,--wrap=fclose",
-#     "-Wl,--wrap=fflush",
-#     "-Wl,--wrap=fread",
-#     "-Wl,--wrap=fwrite",
-#     "-Wl,--wrap=fseek",
-#     "-Wl,--wrap=ftell",
-#     "-Wl,--wrap=fgets",
-#     "-Wl,--wrap=fputs",
-#     "-Wl,--wrap=feof",
-#     "-Wl,--wrap=fileno",
-#     "-Wl,--wrap=clearerr",
-#     "-Wl,--wrap=strdup",
-#   ]
 }
 
 # Board related headfiles search path.

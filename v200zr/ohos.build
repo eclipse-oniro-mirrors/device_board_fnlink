@@ -1,0 +1,10 @@
+{
+  "parts": {
+    "device_v200rz": {
+      "module_list": [
+        "//device/board/fnlink/v200rz:v200rz"
+      ]
+    }
+  },
+  "subsystem": "device_v200rz"
+}

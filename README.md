@@ -71,38 +71,64 @@ Multi-modal V200Z-R开发板是基于恒玄科技BES2600WM芯片，由湖南欧�
 ![Image text](https://gitee.com/garnetttt/img_folder/raw/master/pin5.png)
 
 ## 搭建开发环境
-https://gitee.com/openharmony-sig/device_bestechnic/blob/master/README.md
+https://gitee.com/openharmony/device_soc_bestechnic/blob/master/README.md
 
 ### 系统要求
-系统要求基于Cortex-m33的liteos_m内核操作系统，采用arm-none-eabi-gcc 9.2.1版本toolchain,
+系统要求基于Cortex-m33的liteos_m内核操作系统，采用arm-none-eabi-gcc 10.3版本toolchain,
 提供16MB内存和16MB flash，或者40MB内存和32MB flash系统配置。
 
-OpenHarmony在基于bes2600w 的芯片的Multi-modal V200Z-R模组，依赖liteos_m内核，内核依赖 cortex-m33架构配置，编译依赖arm官方的arm-none-eabi-gcc 9.2.1版本
-OpenHarmony需要按照官方文档介绍安装环境https://gitee.com/openharmony-sig/device_bestechnic/blob/master/README.md， 然后编译出烧录包，按照文档介绍烧录。
+OpenHarmony在基于bes2600w 的芯片的Multi-modal V200Z-R模组，依赖liteos_m内核，内核依赖 cortex-m33架构配置，编译依赖arm官方的arm-none-eabi-gcc 10.3版本
+OpenHarmony需要按照官方文档介绍安装环境 https://gitee.com/openharmony/device_soc_bestechnic/blob/master/README.md ，然后编译出烧录包，按照文档介绍烧录。
 
 
 ### 工具要求
 ubuntu 18.04编译，windows10系统烧录。
 
 1.	Ubuntu18.04系统安装
-`sudo apt-get install build-essential gcc g++ make zlib* libffi-dev e2fsprogs pkg-config flex bison perl bc openssl libssl-dev libelf-dev libc6-dev-amd64 binutils binutils-dev libdwarf-dev u-boot-tools mtd-utils gcc-arm-linux-gnueabi`
+    ```
+    sudo apt-get install build-essential gcc g++ make zlib* libffi-dev e2fsprogs pkg-config flex bison perl bc openssl libssl-dev libelf-dev libc6-dev-amd64 binutils binutils-dev libdwarf-dev u-boot-tools mtd-utils gcc-arm-linux-gnueabi
+    ```
 
 2.	Ubuntu18.04安装python3和pip3 
-`python3 -m pip install --user ohos-build`
+    ```
+    python3 -m pip install --user ohos-build
+    ```
 
-3.	Ubuntu18.04 配置tooLchain arm-none-eabi-gcc 9.2.1
-https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-bi-9-2019-q4-major-x86_64-linux.tar.bz2
-下载解压到指定目录，然后通过bashrc配置环境变量
+3.	Ubuntu18.04 配置tooLchain [arm-none-eabi-gcc](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2):
+
+    下载[arm-none-eabi-gcc 编译工具](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2)
+    解压 [gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2) 安装包至\~/toolchain/路径下。
+
+       ```shell
+       mkdir -p ~/toolchain/
+       tar -zxvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C ~/toolchain/
+       ```
+    设置环境变量。
+    
+       ```
+       vim ~/.bashrc
+       ```
+    
+       将以下命令拷贝到.bashrc文件的最后一行，保存并退出。
+    
+       ```
+       export PATH=~/toolchain/gcc-arm-none-eabi-10.3-2021.10/bin:$PATH
+       ```
+    生效环境变量。
+    
+       ```
+       source ~/.bashrc
+       ```
 
 4.	Win 10安装串口驱动CP2102usbqd 
 
 ### 搭建过程
 
-https://gitee.com/openharmony-sig/device_bestechnic/blob/master/README.md
+https://gitee.com/openharmony/device_soc_bestechnic/blob/master/README.md
 
 ## 编译调试
 
-https://gitee.com/openharmony-sig/device_bestechnic/blob/master/README.md
+https://gitee.com/openharmony/device_soc_bestechnic/blob/master/README.md
 
 按下开发板上reset power按钮，通过串口调试工具打印串口log。
 
@@ -112,7 +138,7 @@ https://gitee.com/openharmony-sig/device_bestechnic/blob/master/README.md
 
 ## 参考资源
 
-https://gitee.com/openharmony-sig/device_bestechnic/blob/master/README.md
+https://gitee.com/openharmony/device_soc_bestechnic/blob/master/README.md
 
 https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-16847573468.28.35937883ZrIoGt&id=660443865533
 

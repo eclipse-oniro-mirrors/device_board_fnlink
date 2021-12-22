@@ -1,5 +1,19 @@
 #include "../../hcs/v200zr.hcs"
 root {
+    /*device_info {
+        platform :: host {
+            device_uart :: device {
+                uart2 :: deviceNode {
+                    policy = 2;                         
+                    priority = 40;                      
+                    permission = 0644;                  
+                    moduleName = "BES_UART_MODULE_HDF";   
+                    serviceName = "HDF_PLATFORM_UART_2";
+                    deviceMatchAttr = "uart2_config";
+                }
+            }
+        }
+    }*/
     platform {
         gpio_config {
             match_attr = "gpio_config";
@@ -16,11 +30,11 @@ root {
                 port = 0;
                 speed = 200000;
                 // TSP_SCL/SDA - I2C0 = GPIO04/GPIO05
-                scl_pin = 4;
-                sda_pin = 5;
-                use_dma = 0;
-                use_sync = 1;
-                as_master = 1;
+                sclPin = 4;
+                sdaPin = 5;
+                useDma = 0;
+                useSync = 1;
+                asMaster = 1;
                 address_width = 8;
                 mode = 0;
             }
@@ -29,15 +43,31 @@ root {
                 port = 1;
                 speed = 200000;
                 // TSP_SCL/SDA - I2C1 = GPIO06/GPIO07
-                scl_pin = 6;
-                sda_pin = 7;
-                use_dma = 0;
-                use_sync = 1;
-                as_master = 1;
+                sclPin = 6;
+                sdaPin = 7;
+                useDma = 0;
+                useSync = 1;
+                asMaster = 1;
                 address_width = 8;
                 mode = 0;
             }
         }
+        /*uart_config {
+            template uart_controller {
+                match_attr = "";
+                num = 0;
+                baudrate = 115200; 
+                parity = 0;
+                stopBit = 0;
+                data = 3;
+                txDMA = false;
+                rxDMA = false;
+            }
+            uart2 :: uart_controller {
+                match_attr = "uart2_config";
+                num = 2;
+            }
+        }*/
     }
     display {
         panel_config {

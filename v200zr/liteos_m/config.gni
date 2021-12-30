@@ -85,6 +85,7 @@ foreach(fs, fs_list) {
 
 if (wrap_fs_api == "true") {
    board_ld_flags += [
+     "-Wl,--wrap=_calloc_r",
      "-Wl,--wrap=_malloc_r",
      "-Wl,--wrap=_realloc_r",
      "-Wl,--wrap=_reallocf_r",
